@@ -20,20 +20,32 @@
 #        self.response.write('Hello world!')
 
 import jinja2
-import os
 import webapp2
+
 
 #set up environment for Jinja
 #this sets jinja's relative directory to match the directory name(dirname) of
 #the current __file__, in this case, main.py
-jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
+env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #this is where you reference your HTML file
-        template = jinja_environment.get_template('template/main.html')
+        template = env.get_template('index.html')
         self.response.out.write(template.render())
+    def post(self):
+        results_template = env.get_template('results.html')
+        # The variables that are sent to results.html are those
+        # that contain the input values from the main.html form with
+        # names like noun1, activity, etc.
+        template_variables = {
+            'name':self.request.get("name"),
+            'year':self.request.get("year"),
+            'score':self.request.get("score"),
+        }
+        self.response.out.write(results_template.render(template_variables))
+
 
 # creates a WSGIApplication and assigns it to the variable app.
 app = webapp2.WSGIApplication([

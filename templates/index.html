@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buzzed</title>
+        <link rel="stylesheet" href="resources/style.css"/>
+    </head>
+
+    <body>
+      <div id="navbar">
+        <ul>
+          <li><a href= "results.html" class="Top">Top 10<img id="logo" src="static/buzz.png" alt="buzz" href="https://www.gatech.edu"></a>
+          </li>
+
+
+        </ul>
+      </div>
+
+      <h1>How Buzzed are you</h1>
+      <form method="post" action ="">
+             <h3>Enter your name: <input type="text" name="name"/></h3>
+             <h3>Choose your year: </h3>
+        <input type="radio" name="year" value="1st year">1st year<br>
+        <input type="radio" name="year" value="2nd year">2nd year<br>
+        <input type="radio" name="year" value="3rd year">3rd year<br>
+        <input type="radio" name="year" value="4th year">4th year<br>
+        <input type="radio" name="year" value="5th year">5th year and counting!<br>
+
+                <p>
+                  <input id="checkbox" type="checkbox">Slept in a GT building (other than a dormitory/apartment) </input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Slept for more than 10 hours every day of the week</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Pulled an all nighter for academics</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Partied all night</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Spend more than 5 hours a week a the TA office lab</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Lost your shoes at college</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Had someone follow you somewhere</input>
+                  <br>
+                  <input id="checkbox" type="checkbox">Exercise everyday</input>
+                  <br>
+                  <input id="checkbox" type="checkbox"  >Use the GT Bus system everyday</input>
+                  <br>
+                </p>
+                <input id="score" type="hidden" ><p id="printed"></p></input>
+                  <p><input type="submit" value="Submit"></p>
+                   </form>
+
+          <br>
+          <div class="wrapper">
+              <button class="button" onclick="checkboxed()">Buzz me in</button>
+
+          </div>
+
+
+        <script src="resources/script.js"></script>
+    </body>
+</html>
